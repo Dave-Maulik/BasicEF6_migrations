@@ -6,7 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static BasicEF6_migrations.DataBaseClasses;
+
 
 namespace ConsoleToHandle
 {
@@ -211,11 +211,34 @@ namespace ConsoleToHandle
             }
         }
 
+        private static void loadRelatedData()
+        {
+            using (var context = new SoldierContext())
+            {
+                context.Database.Log = Console.WriteLine;
+                //Example of Eager loading.
+                //var result = context.Soldiers.Include(s => s.EquipmentOwned).FirstOrDefault(s => s.Name == "Kobayashi");
+
+                //Example of Explicit Loading
+                //var result = context.Soldiers.FirstOrDefault(n=> n.Name.StartsWith("Kobayashi"));
+                //Console.WriteLine("Copy that {0}",result);
+                //context.Entry(result).Collection(n => n.EquipmentOwned).Load();
+                //Console.WriteLine();
+
+                //Lazy Loading By making properties virtual.
+                //NA
+
+                //Projection Queries
+                var result = context.Soldiers.Select(s => new { s.Name, s.BirthDate, s.EquipmentOwned }).ToList();
+                Console.WriteLine();
+            }
+        }
+
         static void Main(string[] args)
         {
             //to stop EF to going through it's Database Initialization Process when it's working with Soldier Context.
-            Database.SetInitializer(new NullDatabaseInitializer<SoldierContext>());
-            //AddSoldier();
+            //Database.SetInitializer(new NullDatabaseInitializer<SoldierContext>());
+            AddSoldier();
             //otherQueries();
             //UpdateSoldier(); 
             //findMetodExample();
@@ -223,7 +246,8 @@ namespace ConsoleToHandle
             //RemoveSoldierRecord();
             //DeleteWithFindMethod();
             //DeleteWithStoredProcedure();
-            InsertRelatedData();
+            //InsertRelatedData();
+            //loadRelatedData();
 
             Console.ReadKey();
         }

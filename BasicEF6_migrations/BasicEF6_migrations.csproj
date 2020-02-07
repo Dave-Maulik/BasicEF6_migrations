@@ -44,10 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBaseClasses.cs" />
+    <Compile Include="Clan.cs" />
     <Compile Include="Enums\EquipmentType.cs" />
     <Compile Include="Enums\SoldireType.cs" />
+    <Compile Include="Interface\IModificationHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Soldier.cs" />
+    <Compile Include="SoliderEquipment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ForMVCRepo.cs" />
     <Compile Include="Migrations\202002060642268_initial.cs" />
     <Compile Include="Migrations\202002060642268_initial.designer.cs">
       <DependentUpon>202002060642268_initial.cs</DependentUpon>
@@ -62,6 +63,14 @@
     <Compile Include="Migrations\202002060728393_ClanColEdit.cs" />
     <Compile Include="Migrations\202002060728393_ClanColEdit.designer.cs">
       <DependentUpon>202002060728393_ClanColEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002070440311_datepropAdded.cs" />
+    <Compile Include="Migrations\202002070440311_datepropAdded.designer.cs">
+      <DependentUpon>202002070440311_datepropAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002070712450_removeIsDirty.cs" />
+    <Compile Include="Migrations\202002070712450_removeIsDirty.designer.cs">
+      <DependentUpon>202002070712450_removeIsDirty.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SoldierContext.cs" />
@@ -85,6 +94,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002060728393_ClanColEdit.resx">
       <DependentUpon>202002060728393_ClanColEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002070440311_datepropAdded.resx">
+      <DependentUpon>202002070440311_datepropAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002070712450_removeIsDirty.resx">
+      <DependentUpon>202002070712450_removeIsDirty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

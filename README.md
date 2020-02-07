@@ -1,4 +1,4 @@
-# BasicEF6_migrations# BasicEF6_migrations
+# BasicEF6_migrations 
 Console application to Demonstrate code fisrst migrations, By table Which aslo has navigation Properties.
 
 # To get Started : 

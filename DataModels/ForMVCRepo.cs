@@ -51,7 +51,7 @@ namespace DataModels
             {
                 //You cannot Add AsNoTracking to Find Method....
                 //return context.Soldiers.Find(id);
-                //Performance Enhancement Below
+                //Performance Enhancement Below Line
                 return context.Soldiers.AsNoTracking().FirstOrDefault(s=>s.Id==id);
             }
         }
